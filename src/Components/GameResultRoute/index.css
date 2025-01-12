@@ -1,0 +1,154 @@
+@media screen and (min-width: 768px) {
+  .game-result-background {
+    height: 90vh;
+    background: linear-gradient(
+      91.08deg,
+      #dbbcc4 9.68%,
+      #f3dfd8 32.98%,
+      #d8bfd0 75.7%,
+      #b7b1d5 99.11%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .game-result-container {
+    width: 80%;
+    height: 85%;
+    gap: 0px;
+    border-radius: 8px;
+    opacity: 0px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-image: url('https://assets.ccbp.in/frontend/react-js/quiz-game-congrats-card-bg.png');
+    background-size: cover;
+  }
+
+  .trophy-image {
+    width: 134px;
+    height: 134px;
+    top: 273px;
+    left: 639px;
+    gap: 0px;
+    opacity: 0px;
+  }
+
+  .game-result-heading-1 {
+    font-family: 'Roboto';
+    font-size: 26px;
+    font-weight: 600;
+    text-align: left;
+    line-height: 40px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #334155;
+  }
+
+  .game-result-heading-2 {
+    font-family: 'Roboto';
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 0px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #0ea5e9;
+  }
+
+  .game-result-para-1 {
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #334155;
+  }
+
+  .game-result-para-2 {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 0px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #475569;
+    margin-bottom: 48px;
+  }
+
+  .report-button {
+    width: (86px);
+    height: (40px);
+    top: 757px;
+    left: 678px;
+    padding: 8px 20px 8px 20px;
+    gap: 10px;
+    border-radius: 4px;
+    opacity: 0px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    border: none;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #f8fafc;
+    background-color: #0ea5e9;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .game-result-failure-container {
+    width: 80%;
+    height: 85%;
+    gap: 0px;
+    border-radius: 8px;
+    opacity: 0px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+  }
+
+  .lose-image {
+    width: 410px;
+    height: 307px;
+    top: 225px;
+    left: 515px;
+    gap: 0px;
+    opacity: 0px;
+  }
+
+  .game-result-lose-heading-1 {
+    font-family: 'Roboto';
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 29.05px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #334155;
+  }
+
+  .game-result-lose-para-1 {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #475569;
+  }
+}

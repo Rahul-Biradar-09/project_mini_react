@@ -1,0 +1,36 @@
+@media screen and (min-width: 768px) {
+  .Notfound-background {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Notfound-image {
+    width: 475px;
+    height: 397px;
+    gap: 0px;
+    opacity: 0px;
+  }
+
+  .Notfound-heading {
+    font-family: 'Roboto';
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 18px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #334155;
+  }
+
+  .Notfound-para {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #64748b;
+  }
+}
