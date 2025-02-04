@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ValuesContext = React.createContext({
-  count: 0,
+  questionsCount: 0,
   unattempted: [],
   rightAnwers: 0,
   increaseCount: () => {},

@@ -1,3 +1,5 @@
+import {Component} from 'react'
+
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 import LoginRoute from './Components/LoginRoute'
@@ -14,19 +16,53 @@ import GameResultRoute from './Components/GameResultRoute'
 
 import GameReportRoute from './Components/GameReportRoute'
 
+import ValuesContext from './Context/ValuesContext'
+
 import './App.css'
 
-const App = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route exact path="/login" component={LoginRoute} />
-      <ProtectedRoute exact path="/" component={HomeRoute} />
-      <ProtectedRoute exact path="/quiz-game" component={QuizGameRoute} />
-      <ProtectedRoute exact path="/game-results" component={GameResultRoute} />
-      <ProtectedRoute exact path="/game-report" component={GameReportRoute} />
-      <Route component={NotFound} />
-    </Switch>
-  </BrowserRouter>
-)
+class App extends Component {
+  state = {questionsCount: 0, unattempted: [], rightAnwers: 0}
+
+  increaseCount = () => {}
+
+  notattempeted = () => {}
+
+  correctAnswers = () => {}
+
+  render() {
+    const {count, rightAnwers, unattempted} = this.state
+    return (
+      <ValuesContext.Provider
+        value={{
+          count,
+          unattempted,
+          rightAnwers,
+          increaseCount: this.increaseCount,
+          notattempeted: this.notattempeted,
+          correctAnswers: this.correctAnswers,
+        }}
+      >
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/login" component={LoginRoute} />
+            <ProtectedRoute exact path="/" component={HomeRoute} />
+            <ProtectedRoute exact path="/quiz-game" component={QuizGameRoute} />
+            <ProtectedRoute
+              exact
+              path="/game-results"
+              component={GameResultRoute}
+            />
+            <ProtectedRoute
+              exact
+              path="/game-report"
+              component={GameReportRoute}
+            />
+            <Route component={NotFound} />
+          </Switch>
+        </BrowserRouter>
+      </ValuesContext.Provider>
+    )
+  }
+}
 
 export default App

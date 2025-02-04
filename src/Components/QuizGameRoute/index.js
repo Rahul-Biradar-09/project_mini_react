@@ -4,9 +4,11 @@ import Cookies from 'js-cookie'
 
 import Loader from 'react-loader-spinner'
 
-import './index.css'
-
 import Header from '../Header'
+
+import ValuesContext from '../../Context/ValuesContext'
+
+import './index.css'
 
 const apiConstants = {
   loading: 'Loading',
@@ -19,8 +21,6 @@ class QuizGameRoute extends Component {
     questionsList: [],
     apiStatus: apiConstants.loading,
     count: 0,
-    unattempted: [],
-    rightAnswers: 0,
     questionNo: 0,
     selectedOption: [],
     display: false,
@@ -71,6 +71,7 @@ class QuizGameRoute extends Component {
     const {display, count} = this.state
     const {history} = this.props
     if (display) {
+      clearInterval(this.timerId)
       this.setState(
         prevState => ({
           questionNo: prevState.questionNo + 1,
@@ -87,15 +88,13 @@ class QuizGameRoute extends Component {
     }
   }
 
-  loadingStateView = () => {
-    return (
-      <div className="Quiz-loading-card">
-        <div className="loader-container" data-testid="loader">
-          <Loader type="ThreeDots" color="#263868" height={50} width={50} />
-        </div>
+  loadingStateView = () => (
+    <div className="Quiz-loading-card">
+      <div className="loader-container" data-testid="loader">
+        <Loader type="ThreeDots" color="#263868" height={50} width={50} />
       </div>
-    )
-  }
+    </div>
+  )
 
   optionSelectedEvent = id => {
     const {questionsList, questionNo} = this.state
@@ -130,11 +129,11 @@ class QuizGameRoute extends Component {
     }
     if (timer === 0) {
       clearInterval(this.timerId)
-      if (display === false) {
-        this.setState(prevState => ({
-          unattempted: {...prevState.unattempted, questionNotattemptted},
+      /* if (display === false) {
+         this.setState(prevState => ({
+          unattempted: [...prevState.unattempted, questionNotattemptted],
         }))
-      }
+      } */
       if (count > 9) {
         history.replace('/game-results')
       }
@@ -150,6 +149,21 @@ class QuizGameRoute extends Component {
       this.setState(prevState => ({timer: prevState.timer - 1}))
     }
   }
+
+  /* onClickedOption = id => {
+    const {display, count, questionNo, questionsList, timer} = this.state
+    const value = questionsList[questionNo]
+    const correct = value.options.filter(eachItem => eachItem.id === id)
+    if (timer === 0){
+    if (display === false){
+     console.log(questionsList[questionNo])
+     console.log(count)
+     }
+    }
+    if (correct) {
+      console.log(correct[0])
+    }
+  } */
 
   successStateView = () => {
     const {
@@ -245,7 +259,7 @@ class QuizGameRoute extends Component {
                             className="options"
                             onClick={
                               display
-                                ? null
+                                ? () => {}
                                 : () => {
                                     this.optionSelectedEvent(eachItem.id)
                                   }
@@ -323,7 +337,7 @@ class QuizGameRoute extends Component {
                             className="options-image"
                             onClick={
                               display
-                                ? null
+                                ? () => {}
                                 : () => this.optionSelectedEvent(eachItem.id)
                             }
                           />
@@ -344,11 +358,17 @@ class QuizGameRoute extends Component {
                           type="radio"
                           className="radio-option"
                           id={eachItem.id}
+                          checked={selectedOption.id === eachItem.id}
+                          onChange={
+                            display
+                              ? () => {}
+                              : () => this.optionSelectedEvent(eachItem.id)
+                          }
                           name="radiobutton"
                         />
-                        <lable htmlFor={eachItem.id} className="radio-label">
+                        <label htmlFor={eachItem.id} className="radio-label">
                           {eachItem.text}
-                        </lable>
+                        </label>
                         <img
                           src={
                             selectedOption.is_correct === `${rightOption}`
@@ -375,14 +395,20 @@ class QuizGameRoute extends Component {
                               type="radio"
                               className="radio-option"
                               id={eachItem.id}
+                              checked={selectedOption.id === eachItem.id}
+                              onChange={
+                                display
+                                  ? () => {}
+                                  : () => this.optionSelectedEvent(eachItem.id)
+                              }
                               name="radiobutton"
                             />
-                            <lable
+                            <label
                               htmlFor={eachItem.id}
                               className="radio-label"
                             >
                               {eachItem.text}
-                            </lable>
+                            </label>
                             <img
                               src={
                                 eachItem.is_correct === 'true'
@@ -408,18 +434,19 @@ class QuizGameRoute extends Component {
                               className="radio-option"
                               id={eachItem.id}
                               name="radiobutton"
+                              checked={selectedOption.id === eachItem.id}
                               onChange={
                                 display
-                                  ? null
+                                  ? () => {}
                                   : () => this.optionSelectedEvent(eachItem.id)
                               }
                             />
-                            <lable
+                            <label
                               htmlFor={eachItem.id}
                               className="radio-label"
                             >
                               {eachItem.text}
-                            </lable>
+                            </label>
                           </div>
                         )}
                       </>
@@ -443,26 +470,24 @@ class QuizGameRoute extends Component {
     )
   }
 
-  failureStateView = () => {
-    return (
-      <div className="Quiz-failure-card">
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/nxt-assess-failure-img.png"
-          alt="failure view"
-          className="failure-image"
-        />
-        <h1 className="failure-heading">Something went wrong</h1>
-        <p className="failure-para">Our server are busy please try again </p>
-        <button
-          type="button"
-          className="failure-button"
-          onClick={this.retryButtonEvent}
-        >
-          Retry
-        </button>
-      </div>
-    )
-  }
+  failureStateView = () => (
+    <div className="Quiz-failure-card">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/nxt-assess-failure-img.png"
+        alt="failure view"
+        className="failure-image"
+      />
+      <h1 className="failure-heading">Something went wrong</h1>
+      <p className="failure-para">Our server are busy please try again </p>
+      <button
+        type="button"
+        className="failure-button"
+        onClick={this.retryButtonEvent}
+      >
+        Retry
+      </button>
+    </div>
+  )
 
   apistatusConstants = () => {
     const {apiStatus} = this.state
@@ -479,7 +504,6 @@ class QuizGameRoute extends Component {
   }
 
   render() {
-    const {count, unattempted} = this.state
     return (
       <>
         <Header />

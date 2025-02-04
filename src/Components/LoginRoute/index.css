@@ -1,3 +1,306 @@
+@media screen and (max-width: 576px) {
+  .Login-background {
+    height: 100vh;
+    background: linear-gradient(
+      91.08deg,
+      #dbbcc4 9.68%,
+      #f3dfd8 32.98%,
+      #d8bfd0 75.7%,
+      #b7b1d5 99.11%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Login-card {
+    width: 90%;
+    height: 92%;
+    gap: 0px;
+    border-radius: 8px;
+    opacity: 0px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .Login-form {
+    height: 250px;
+    width: 100%;
+  }
+
+  .Login-image {
+    margin-bottom: 35px;
+  }
+
+  .Input-container {
+    height: 170px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .label {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #7e858e;
+    margin-bottom: 8px;
+  }
+
+  .input {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 100%;
+    height: 42px;
+    top: 24px;
+    gap: 0px;
+    border-radius: 10px;
+    opacity: 0px;
+    border: 1px solid #d7dfe9;
+    outline: none;
+    padding-left: 12px;
+    margin-bottom: 16px;
+  }
+
+  .checkbox-container {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .checkbox-element {
+    width: 15px;
+    height: 15px;
+    top: 4px;
+    gap: 0px;
+    opacity: 0px;
+    border: 1px solid #d7dfe9;
+    margin-right: 7px;
+  }
+
+  .checkbox-label {
+    font-family: 'Roboto';
+    font-size: 2px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-right: 14px;
+    color: #000000;
+  }
+
+  .Login-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-weight: 400;
+    width: 100%;
+    height: 40px;
+    gap: 8px;
+    border-radius: 8px;
+    opacity: 0px;
+    background: #0ea5e9;
+    color: #f8fafc;
+    border: 0px;
+    cursor: pointer;
+    margin-bottom: 22px;
+  }
+
+  .error-message {
+    width: 100%;
+    height: 18px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Roboto;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16.41px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #ef4444;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .Login-background {
+    height: 100vh;
+    background: linear-gradient(
+      91.08deg,
+      #dbbcc4 9.68%,
+      #f3dfd8 32.98%,
+      #d8bfd0 75.7%,
+      #b7b1d5 99.11%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Login-card {
+    width: 80%;
+    height: 80%;
+    gap: 0px;
+    border-radius: 8px;
+    opacity: 0px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 100px;
+  }
+
+  .Login-form {
+    height: 300px;
+    width: 420px;
+  }
+
+  .Login-image {
+    margin-bottom: 36px;
+  }
+
+  .Input-container {
+    height: 180px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .label {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #7e858e;
+    margin-bottom: 8px;
+  }
+
+  .input {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 411px;
+    height: 42px;
+    top: 24px;
+    gap: 0px;
+    border-radius: 10px;
+    opacity: 0px;
+    border: 1px solid #d7dfe9;
+    outline: none;
+    padding-left: 12px;
+    margin-bottom: 16px;
+  }
+
+  .checkbox-container {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .checkbox-element {
+    width: 15px;
+    height: 15px;
+    top: 4px;
+    gap: 0px;
+    opacity: 0px;
+    border: 1px solid #d7dfe9;
+    margin-right: 7px;
+  }
+
+  .checkbox-label {
+    font-family: 'Roboto';
+    font-size: 2px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-right: 14px;
+    color: #000000;
+  }
+
+  .Login-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-weight: 400;
+    width: 100%;
+    height: 40px;
+    gap: 8px;
+    border-radius: 8px;
+    opacity: 0px;
+    background: #0ea5e9;
+    color: #f8fafc;
+    border: 0px;
+    cursor: pointer;
+  }
+
+  .error-message {
+    width: 100%;
+    height: 17px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.41px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #ef4444;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .Login-background {
     height: 100vh;

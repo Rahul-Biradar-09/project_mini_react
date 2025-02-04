@@ -21,12 +21,19 @@ const Header = props => {
       <button type="button" onClick={imageHomeButton} className="imgButton">
         <img
           src="https://res.cloudinary.com/dhr677kpr/image/upload/v1732888547/image_hkxsmo.png"
-          alt="login website logo"
+          alt="website logo"
           className="Home-image"
         />
       </button>
       <button type="button" className="Home-button" onClick={logoutButton}>
         Logout
+      </button>
+      <button type="button" className="img-home-button" onClick={logoutButton}>
+        <img
+          src="https://res.cloudinary.com/dhr677kpr/image/upload/v1736766624/log-out-02_k0q5v8.png"
+          alt="logout"
+          className="logout-image"
+        />
       </button>
     </div>
   )

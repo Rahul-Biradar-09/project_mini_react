@@ -28,7 +28,6 @@ class LoginRoute extends Component {
     if (apiCall.ok === true) {
       const response = await apiCall.json()
       this.saveAccessToken(response.jwt_token)
-      console.log(response.jwt_token)
     } else {
       const response = await apiCall.json()
       this.setState({errorMsg: response.error_msg})

@@ -1,3 +1,259 @@
+@media screen and (max-width: 576px) {
+  .Home-background {
+    height: 90vh;
+    background: linear-gradient(
+      91.08deg,
+      #dbbcc4 9.68%,
+      #f3dfd8 32.98%,
+      #d8bfd0 75.7%,
+      #b7b1d5 99.11%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Home-card-container {
+    width: 90%;
+    height: 90%;
+    gap: 0px;
+    border-radius: 8px;
+    opacity: 0px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+  }
+
+  .Home-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .HomeRoute-image {
+    height: 130px;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .HomeRoute-heading {
+    width: 100%;
+    height: 32px;
+    top: 620px;
+    left: 405px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #0ea5e9;
+    margin-bottom: 15px;
+  }
+
+  .HomeRoute-para {
+    width: 100%;
+    height: 24px;
+    top: 668px;
+    left: 503px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: 'Roboto';
+    font-size: 1px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #475569;
+    margin-bottom: 15px;
+  }
+
+  .start-Button {
+    width: 100px;
+    height: 40px;
+    padding: 8px 16px 8px 16px;
+    gap: 8px;
+    border-radius: 8px;
+    border: 0px;
+    opacity: 0px;
+    background-color: #0ea5e9;
+    font-family: 'Roboto';
+    font-size: 4px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #f8fafc;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 13px;
+  }
+
+  .PopUp-container {
+    font-family: 'Roboto';
+    font-size: 1px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 100%;
+    height: 60px;
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #fef3c7;
+    color: #d97706;
+  }
+
+  .exclamation_image {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    margin-left: 7px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .Home-background {
+    height: 90vh;
+    background: linear-gradient(
+      91.08deg,
+      #dbbcc4 9.68%,
+      #f3dfd8 32.98%,
+      #d8bfd0 75.7%,
+      #b7b1d5 99.11%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Home-card-container {
+    width: 80%;
+    height: 85%;
+    gap: 0px;
+    border-radius: 8px;
+    opacity: 0px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+  }
+
+  .Home-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .HomeRoute-image {
+    height: 280px;
+    width: 410px;
+    margin-bottom: 10px;
+  }
+
+  .HomeRoute-heading {
+    width: 631px;
+    height: 32px;
+    top: 620px;
+    left: 405px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 52px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #0ea5e9;
+  }
+
+  .HomeRoute-para {
+    width: 436px;
+    height: 24px;
+    top: 668px;
+    left: 503px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #475569;
+  }
+
+  .start-Button {
+    width: 105px;
+    height: 40px;
+    padding: 8px 16px 8px 16px;
+    gap: 8px;
+    border-radius: 8px;
+    border: 0px;
+    opacity: 0px;
+    background-color: #0ea5e9;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #f8fafc;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .PopUp-container {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 480px;
+    height: 52px;
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #fef3c7;
+    color: #d97706;
+  }
+
+  .exclamation_image {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .Home-background {
     height: 90vh;

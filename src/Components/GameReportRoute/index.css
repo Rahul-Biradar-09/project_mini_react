@@ -1,3 +1,321 @@
+@media screen and (max-width: 576px) {
+  .game-report-container-background {
+    height: 90vh;
+    background: linear-gradient(
+      91.08deg,
+      #dbbcc4 9.68%,
+      #f3dfd8 32.98%,
+      #d8bfd0 75.7%,
+      #b7b1d5 99.11%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .game-report-container {
+    width: 90%;
+    height: 90%;
+    gap: 0px;
+    border-radius: 8px;
+    opacity: 0px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+  }
+
+  .game-report-top-container {
+    width: 255px;
+    height: 110px;
+    top: 200px;
+    left: 508px;
+    gap: 0px;
+    opacity: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .score-circle {
+    width: 83px;
+    height: 83px;
+    top: 200px;
+    left: 508px;
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 100px;
+    border: 5px solid #0ea5e9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .score-head {
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #0ea5e9;
+  }
+
+  .cross-line {
+    color: #475569;
+  }
+
+  .score-head-small {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #475569;
+  }
+
+  .score-rectangle {
+    width: 154px;
+    height: 100px;
+    top: 211px;
+    left: 706px;
+    gap: 0px;
+    opacity: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .sub-div {
+    height: 32px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .img {
+    width: 15px;
+    height: 18px;
+    top: 215px;
+    left: 706px;
+    padding: 3px 0px 3px 0px;
+    gap: 0px;
+    opacity: 0px;
+    margin-right: 15px;
+  }
+
+  .para {
+    font-family: 'Roboto';
+    font-size: 2px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #475569;
+  }
+
+  .unattempted-head {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 0px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #0ea5e9;
+  }
+
+  .game-report-bottom-container {
+    height: 245px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: lightblue;
+  }
+
+  .game-report-bottom-container-attempted {
+    height: 245px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+
+@media (min-width: 576px) and (max-width: 768px){
+  .game-report-container-background {
+    height: 90vh;
+    background: linear-gradient(
+      91.08deg,
+      #dbbcc4 9.68%,
+      #f3dfd8 32.98%,
+      #d8bfd0 75.7%,
+      #b7b1d5 99.11%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .game-report-container {
+    width: 80%;
+    height: 85%;
+    gap: 0px;
+    border-radius: 8px;
+    opacity: 0px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+  }
+
+  .game-report-top-container {
+    width: 390px;
+    height: 160px;
+    top: 200px;
+    left: 508px;
+    gap: 0px;
+    opacity: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .score-circle {
+    width: 150px;
+    height: 150px;
+    top: 200px;
+    left: 508px;
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 100px;
+    border: 7px solid #0ea5e9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .score-head {
+    font-family: 'Roboto';
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #0ea5e9;
+  }
+
+  .cross-line {
+    color: #475569;
+  }
+
+  .score-head-small {
+    font-family: 'Roboto';
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #475569;
+  }
+
+  .score-rectangle {
+    width: 210px;
+    height: 144px;
+    top: 211px;
+    left: 706px;
+    gap: 0px;
+    opacity: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .sub-div {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .img {
+    width: 20px;
+    height: 24px;
+    top: 215px;
+    left: 706px;
+    padding: 3px 0px 3px 0px;
+    gap: 0px;
+    opacity: 0px;
+    margin-right: 20px;
+  }
+
+  .para {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #475569;
+  }
+
+  .unattempted-head {
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 0px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #0ea5e9;
+  }
+
+  .game-report-bottom-container {
+    height: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .game-report-bottom-container-attempted {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
 @media screen and (min-width: 768px) {
   .game-report-container-background {
     height: 90vh;
@@ -143,5 +461,14 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+  }
+
+  .game-report-bottom-container-attempted {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 }
