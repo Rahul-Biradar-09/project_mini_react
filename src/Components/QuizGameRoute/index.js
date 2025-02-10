@@ -6,7 +6,7 @@ import Loader from 'react-loader-spinner'
 
 import Header from '../Header'
 
-import ValuesContext from '../../Context/ValuesContext'
+import GameResultRoute from '../GameResultRoute'
 
 import './index.css'
 
@@ -21,6 +21,9 @@ class QuizGameRoute extends Component {
     questionsList: [],
     apiStatus: apiConstants.loading,
     count: 0,
+    unattempted: [],
+    attempted: 0,
+    rightAnswers: 0,
     questionNo: 0,
     selectedOption: [],
     display: false,
@@ -69,22 +72,19 @@ class QuizGameRoute extends Component {
 
   nextQuestionEvent = () => {
     const {display, count} = this.state
-    const {history} = this.props
+
     if (display) {
       clearInterval(this.timerId)
-      this.setState(
-        prevState => ({
-          questionNo: prevState.questionNo + 1,
-          display: !prevState.display,
-          count: prevState.count + 1,
-          rightOption: false,
-          timer: 15,
-        }),
-        this.runTimer,
-      )
+      this.setState(prevState => ({
+        questionNo: prevState.questionNo + 1,
+        display: !prevState.display,
+        count: prevState.count + 1,
+        rightOption: false,
+        timer: 15,
+      }))
     }
-    if (count > 9) {
-      history.replace('/game-results')
+    if (count < 11) {
+      this.runTimer()
     }
   }
 
@@ -95,6 +95,15 @@ class QuizGameRoute extends Component {
       </div>
     </div>
   )
+
+  onClickedOption = id => {
+    const {questionNo, questionsList} = this.state
+    const value = questionsList[questionNo]
+    const correct = value.options.filter(eachItem => eachItem.id === id)
+    if (correct[0].is_correct === 'true') {
+      this.setState(prevState => ({rightAnswers: prevState.rightAnswers + 1}))
+    }
+  }
 
   optionSelectedEvent = id => {
     const {questionsList, questionNo} = this.state
@@ -108,20 +117,22 @@ class QuizGameRoute extends Component {
       this.setState(prevState => ({
         display: !prevState.display,
         rightOption: !prevState.rightOption,
+        attempted: prevState.attempted + 1,
         selectedOption: objectValue[0],
       }))
     } else {
       this.setState(prevState => ({
         display: !prevState.display,
+        attempted: prevState.attempted + 1,
         selectedOption: objectValue[0],
       }))
     }
+
+    this.onClickedOption(id)
   }
 
   startTimer = () => {
     const {timer, display, count, questionsList, questionNo} = this.state
-    const {history} = this.props
-
     const questionNotattemptted = questionsList[questionNo]
 
     if (display) {
@@ -129,13 +140,13 @@ class QuizGameRoute extends Component {
     }
     if (timer === 0) {
       clearInterval(this.timerId)
-      /* if (display === false) {
-         this.setState(prevState => ({
+      if (display === false) {
+        this.setState(prevState => ({
           unattempted: [...prevState.unattempted, questionNotattemptted],
         }))
-      } */
-      if (count > 9) {
-        history.replace('/game-results')
+      }
+      if (count === 11) {
+        clearInterval(this.timerId)
       }
       this.setState(
         prevState => ({
@@ -149,21 +160,6 @@ class QuizGameRoute extends Component {
       this.setState(prevState => ({timer: prevState.timer - 1}))
     }
   }
-
-  /* onClickedOption = id => {
-    const {display, count, questionNo, questionsList, timer} = this.state
-    const value = questionsList[questionNo]
-    const correct = value.options.filter(eachItem => eachItem.id === id)
-    if (timer === 0){
-    if (display === false){
-     console.log(questionsList[questionNo])
-     console.log(count)
-     }
-    }
-    if (correct) {
-      console.log(correct[0])
-    }
-  } */
 
   successStateView = () => {
     const {
@@ -461,7 +457,7 @@ class QuizGameRoute extends Component {
           <button
             type="button"
             className={display ? 'next-button' : 'blue-button'}
-            onClick={display ? this.nextQuestionEvent : null}
+            onClick={display ? this.nextQuestionEvent : () => {}}
           >
             {count > 9 ? 'Submit' : 'Next Question'}
           </button>
@@ -504,10 +500,28 @@ class QuizGameRoute extends Component {
   }
 
   render() {
+    const {count, unattempted, rightAnswers, attempted} = this.state
     return (
       <>
-        <Header />
-        <div className="Quiz-background">{this.apistatusConstants()}</div>
+        {count < 11 ? (
+          <>
+            <Header />
+            <div className="Quiz-background">{this.apistatusConstants()}</div>
+          </>
+        ) : (
+          <>
+            <Header />
+            <div className="Quiz-background">
+              {
+                <GameResultRoute
+                  unattempted={unattempted}
+                  rightAnswers={rightAnswers}
+                  attempted={attempted}
+                />
+              }
+            </div>
+          </>
+        )}
       </>
     )
   }

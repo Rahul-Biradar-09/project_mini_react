@@ -1,5 +1,5 @@
 @media screen and (max-width: 576px) {
-  .game-result-background {
+  /*.game-result-background {
     height: 90vh;
     background: linear-gradient(
       91.08deg,
@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+  }*/
 
   .game-result-container {
     width: 90%;
@@ -166,7 +166,7 @@
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
-  .game-result-background {
+  /*.game-result-background {
     height: 90vh;
     background: linear-gradient(
       91.08deg,
@@ -179,7 +179,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+  }*/
 
   .game-result-container {
     width: 80%;
@@ -334,7 +334,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .game-result-background {
+  /*.game-result-background {
     height: 90vh;
     background: linear-gradient(
       91.08deg,
@@ -347,7 +347,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+  }*/
 
   .game-result-container {
     width: 80%;
