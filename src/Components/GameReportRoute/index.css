@@ -83,7 +83,7 @@
   }
 
   .score-rectangle {
-    width: 154px;
+    width: 160px;
     height: 100px;
     top: 211px;
     left: 706px;
@@ -112,7 +112,7 @@
     padding: 3px 0px 3px 0px;
     gap: 0px;
     opacity: 0px;
-    margin-right: 15px;
+    margin-right: 10px;
   }
 
   .para {
@@ -777,7 +777,7 @@
   }
 
   .game-report-top-container {
-    width: 390px;
+    width: 430px;
     height: 160px;
     top: 200px;
     left: 508px;
@@ -831,7 +831,7 @@
   }
 
   .score-rectangle {
-    width: 210px;
+    width: 250px;
     height: 144px;
     top: 211px;
     left: 706px;

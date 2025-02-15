@@ -178,29 +178,30 @@ class QuizGameRoute extends Component {
           <div className="block-one">
             <div className="questionscount-container">
               <p className="questions-para">Question</p>
-              <h1 className="questions-count">{`${count}/${questionsList.length}`}</h1>
+              <p className="questions-count">{`${count}/${questionsList.length}`}</p>
             </div>
             <div className="timer-container">
               <p className="timer-para">{timer}</p>
             </div>
           </div>
-          <div className="questions-container" key={question.id}>
-            <h1 className="questions">{question.question_text}</h1>
+          <ul className="questions-container" key={question.id}>
+            <p className="questions">{question.question_text}</p>
             {question.options_type === 'DEFAULT' && (
-              <div className="options-container-default">
+              <ul className="options-container-default">
                 {question.options.map(eachItem => (
-                  <div className="options-check-default" key={eachItem.id}>
+                  <li className="options-check-default" key={eachItem.id}>
                     {selectedOption.id === eachItem.id ? (
                       <>
-                        <li
+                        <button
+                          type="button"
                           className={
                             selectedOption.is_correct === `${rightOption}`
                               ? 'options right-option'
                               : 'options wrong-option'
                           }
                         >
-                          {eachItem.text}
-                        </li>
+                          <li className="list-default">{eachItem.text}</li>
+                        </button>
                         <img
                           src={
                             selectedOption.is_correct === `${rightOption}`
@@ -223,15 +224,16 @@ class QuizGameRoute extends Component {
                       <>
                         {rightOption ? (
                           <>
-                            <li
+                            <button
+                              type="button"
                               className={
                                 eachItem.is_correct === 'true'
                                   ? 'options right-option'
                                   : 'options'
                               }
                             >
-                              {eachItem.text}
-                            </li>
+                              <li className="list-default">{eachItem.text}</li>
+                            </button>
                             <img
                               src={
                                 eachItem.is_correct === 'true'
@@ -251,7 +253,8 @@ class QuizGameRoute extends Component {
                             />
                           </>
                         ) : (
-                          <li
+                          <button
+                            type="button"
                             className="options"
                             onClick={
                               display
@@ -261,19 +264,19 @@ class QuizGameRoute extends Component {
                                   }
                             }
                           >
-                            {eachItem.text}
-                          </li>
+                            <li className="list-default">{eachItem.text}</li>
+                          </button>
                         )}
                       </>
                     )}
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             )}
             {question.options_type === 'IMAGE' && (
-              <div className="options-container-image">
+              <ul className="options-container-image">
                 {question.options.map(eachItem => (
-                  <div className="options-check-image" key={eachItem.id}>
+                  <li className="options-check-image" key={eachItem.id}>
                     {selectedOption.id === eachItem.id ? (
                       <>
                         <img
@@ -281,6 +284,7 @@ class QuizGameRoute extends Component {
                           alt={eachItem.text}
                           className="options-image"
                         />
+
                         <img
                           src={
                             selectedOption.is_correct === `${rightOption}`
@@ -294,8 +298,8 @@ class QuizGameRoute extends Component {
                           }
                           className={
                             selectedOption.is_correct === `${rightOption}`
-                              ? 'right-answer'
-                              : 'wrong-answer'
+                              ? 'right-answer-image'
+                              : 'wrong-answer-image'
                           }
                         />
                       </>
@@ -308,6 +312,7 @@ class QuizGameRoute extends Component {
                               alt={eachItem.text}
                               className="options-image"
                             />
+
                             <img
                               src={
                                 eachItem.is_correct === 'true'
@@ -321,7 +326,7 @@ class QuizGameRoute extends Component {
                               }
                               className={
                                 eachItem.is_correct === 'true'
-                                  ? 'right-answer'
+                                  ? 'right-answer-image'
                                   : null
                               }
                             />
@@ -340,14 +345,14 @@ class QuizGameRoute extends Component {
                         )}
                       </>
                     )}
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             )}
             {question.options_type === 'SINGLE_SELECT' && (
-              <div className="options-container-single">
+              <ul className="options-container-single">
                 {question.options.map(eachItem => (
-                  <div className="options-check-single" key={eachItem.id}>
+                  <li className="options-check-single" key={eachItem.id}>
                     {selectedOption.id === eachItem.id ? (
                       <>
                         <input
@@ -365,6 +370,7 @@ class QuizGameRoute extends Component {
                         <label htmlFor={eachItem.id} className="radio-label">
                           {eachItem.text}
                         </label>
+
                         <img
                           src={
                             selectedOption.is_correct === `${rightOption}`
@@ -405,6 +411,7 @@ class QuizGameRoute extends Component {
                             >
                               {eachItem.text}
                             </label>
+
                             <img
                               src={
                                 eachItem.is_correct === 'true'
@@ -424,7 +431,7 @@ class QuizGameRoute extends Component {
                             />
                           </>
                         ) : (
-                          <div>
+                          <>
                             <input
                               type="radio"
                               className="radio-option"
@@ -443,15 +450,15 @@ class QuizGameRoute extends Component {
                             >
                               {eachItem.text}
                             </label>
-                          </div>
+                          </>
                         )}
                       </>
                     )}
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             )}
-          </div>
+          </ul>
         </div>
         <div className="button-container">
           <button
@@ -474,7 +481,7 @@ class QuizGameRoute extends Component {
         className="failure-image"
       />
       <h1 className="failure-heading">Something went wrong</h1>
-      <p className="failure-para">Our server are busy please try again </p>
+      <p className="failure-para">Our servers are busy please try again</p>
       <button
         type="button"
         className="failure-button"
