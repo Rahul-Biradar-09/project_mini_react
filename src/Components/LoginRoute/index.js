@@ -20,7 +20,7 @@ class LoginRoute extends Component {
 
     const data = {username, password}
     const options = {
-      method: 'POST',
+      method: 'Post',
       body: JSON.stringify(data),
     }
 
